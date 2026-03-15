@@ -1148,7 +1148,8 @@ section, .full-section {
 
 /* ========== Responsive ========== */
 @media (max-width: 768px) {
-  .hero-bg img { object-position: center 35%; }
+  .hero-bg img { object-position: center 20%; object-fit: cover; width: 100%; height: 70%; top: 0; position: absolute; }
+  .hero-bg { position: absolute; }
   .hero-frame { inset: 0.8rem; }
   .hero-content { bottom: 4rem; top: auto; }
   .hero-names-row h1 { font-size: clamp(1.6rem, 7vw, 2.5rem); }
@@ -1233,7 +1234,7 @@ section, .full-section {
 <!-- Hero Section -->
 <section class="hero" id="hero">
   <div class="hero-bg">
-    <img src="example2.jpeg" alt="Peter and Mary">
+    <img src="verticle.jpeg" alt="Peter and Mary">
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-frame"></div>
