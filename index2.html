@@ -146,6 +146,9 @@ body {
   min-height: 650px;
   overflow: hidden;
   background: #b7a996;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .hero-bg {
@@ -175,9 +178,9 @@ body {
   z-index: 1;
   background:
     linear-gradient(to bottom,
-      rgba(26,20,16,0.3) 0%,
-      rgba(26,20,16,0.3) 50%,
-      rgba(26,20,16,0.85) 75%,
+      rgba(26,20,16,0.2) 0%,
+      rgba(26,20,16,0.2) 40%,
+      rgba(26,20,16,0.75) 65%,
       rgba(26,20,16,0.95) 100%);
 }
 
@@ -358,7 +361,7 @@ section, .full-section {
 
 /* ========== Message Section ========== */
 .message-section {
-  background: #b7a996;
+  background: #5b4c3a;
   text-align: center;
   padding: 4rem 2rem;
 }
@@ -376,7 +379,7 @@ section, .full-section {
 
 /* ========== Countdown ========== */
 .countdown-section {
-  background: #b7a996;
+  background: #5b4c3a;
   text-align: center;
   padding: 5rem 2rem;
 }
@@ -1148,8 +1151,9 @@ section, .full-section {
 
 /* ========== Responsive ========== */
 @media (max-width: 768px) {
-  .hero-bg img { object-position: center 20%; object-fit: cover; width: 100%; height: 70%; top: 0; position: absolute; }
-  .hero-bg { position: absolute; }
+  .hero-bg img { object-position: center 20%; object-fit: cover; width: 100%; height: 100%; }
+  .hero-content { bottom: 5rem; top: auto; left: 0; right: 0; padding: 0 1rem; }
+  .scroll-hint { left: 50%; transform: translateX(-50%); }
   .hero-frame { inset: 0.8rem; }
   .hero-content { bottom: 4rem; top: auto; }
   .hero-names-row h1 { font-size: clamp(1.6rem, 7vw, 2.5rem); }
