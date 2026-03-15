@@ -31,16 +31,67 @@ html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
   font-family: var(--font-sans);
-  background: #ffffff;
-  color: var(--brown-deep);
+  background: #b7a996;
+  color: #ffffff;
   overflow-x: hidden;
   line-height: 1.8;
   font-weight: 300;
+  position: relative;
+}
+
+/* ========== Background Blobs ========== */
+.bg-blobs {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.blob {
+  position: absolute;
+  opacity: 0.18;
+}
+
+.blob-1 {
+  width: 520px;
+  height: 440px;
+  background: #7a6452;
+  border-radius: 62% 38% 73% 27% / 45% 61% 39% 55%;
+  top: 5%;
+  left: -8%;
+}
+
+.blob-2 {
+  width: 380px;
+  height: 460px;
+  background: #4a3828;
+  border-radius: 38% 62% 44% 56% / 60% 35% 65% 40%;
+  top: 30%;
+  right: -6%;
+}
+
+.blob-3 {
+  width: 300px;
+  height: 320px;
+  background: #7a6452;
+  border-radius: 55% 45% 30% 70% / 50% 70% 30% 50%;
+  top: 62%;
+  left: 20%;
+}
+
+.blob-4 {
+  width: 420px;
+  height: 360px;
+  background: #4a3828;
+  border-radius: 70% 30% 55% 45% / 35% 65% 35% 65%;
+  bottom: 5%;
+  right: 10%;
 }
 
 /* ========== Scrollbar ========== */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #ffffff; }
+::-webkit-scrollbar-track { background: #b7a996; }
 ::-webkit-scrollbar-thumb { background: var(--sand); border-radius: 3px; }
 
 /* ========== Navigation ========== */
@@ -58,9 +109,9 @@ body {
 }
 
 .nav.scrolled {
-  background: rgba(250, 246, 240, 0.95);
+  background: rgba(26, 20, 16, 0.95);
   backdrop-filter: blur(12px);
-  box-shadow: 0 1px 20px rgba(74,55,40,0.06);
+  box-shadow: 0 1px 20px rgba(0,0,0,0.3);
 }
 
 .nav a {
@@ -74,7 +125,7 @@ body {
   transition: color 0.3s;
 }
 
-.nav.scrolled a { color: var(--brown); }
+.nav.scrolled a { color: #ffffff; }
 
 .nav a::after {
   content: '';
@@ -94,7 +145,7 @@ body {
   height: 100vh;
   min-height: 650px;
   overflow: hidden;
-  background: #1a1410;
+  background: #b7a996;
 }
 
 .hero-bg {
@@ -124,11 +175,10 @@ body {
   z-index: 1;
   background:
     linear-gradient(to bottom,
-      rgba(26,20,16,0.8) 0%,
-      rgba(26,20,16,0.5) 18%,
-      rgba(26,20,16,0.05) 40%,
-      rgba(26,20,16,0.0) 60%,
-      rgba(26,20,16,0.25) 100%);
+      rgba(26,20,16,0.3) 0%,
+      rgba(26,20,16,0.3) 50%,
+      rgba(26,20,16,0.85) 75%,
+      rgba(26,20,16,0.95) 100%);
 }
 
 /* Thin gold frame */
@@ -140,10 +190,10 @@ body {
   pointer-events: none;
 }
 
-/* Top center content */
+/* Bottom center content */
 .hero-content {
   position: absolute;
-  top: 16rem;
+  bottom: 6rem;
   left: 0;
   right: 0;
   z-index: 3;
@@ -264,6 +314,8 @@ section, .full-section {
   padding: 7rem 2rem;
   max-width: 960px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 .full-section {
@@ -274,7 +326,7 @@ section, .full-section {
   font-family: var(--font-sans);
   font-size: 0.8rem;
   font-weight: 300;
-  color: var(--terracotta);
+  color: var(--sand);
   letter-spacing: 6px;
   text-transform: uppercase;
   margin-bottom: 1rem;
@@ -284,7 +336,7 @@ section, .full-section {
   font-family: var(--font-serif);
   font-size: clamp(2.4rem, 5.5vw, 3.8rem);
   font-weight: 300;
-  color: var(--brown-deep);
+  color: #ffffff;
   line-height: 1.2;
   margin-bottom: 0.8rem;
 }
@@ -292,7 +344,7 @@ section, .full-section {
 .section-sub {
   font-size: 1.05rem;
   font-weight: 300;
-  color: var(--muted);
+  color: rgba(255,255,255,0.6);
   margin-bottom: 3rem;
   letter-spacing: 1px;
 }
@@ -306,7 +358,7 @@ section, .full-section {
 
 /* ========== Message Section ========== */
 .message-section {
-  background: #ffffff;
+  background: #b7a996;
   text-align: center;
   padding: 4rem 2rem;
 }
@@ -314,7 +366,7 @@ section, .full-section {
 .message-text {
   font-family: var(--font-serif);
   font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-  color: var(--brown-deep);
+  color: #ffffff;
   font-weight: 500;
   line-height: 2;
   max-width: 700px;
@@ -324,14 +376,14 @@ section, .full-section {
 
 /* ========== Countdown ========== */
 .countdown-section {
-  background: #ffffff;
+  background: #b7a996;
   text-align: center;
   padding: 5rem 2rem;
 }
 
-.countdown-section .section-label { color: var(--terracotta); opacity: 1; }
-.countdown-section .section-title { color: var(--brown-deep); }
-.countdown-section .section-sub { color: var(--muted); }
+.countdown-section .section-label { color: var(--sand); opacity: 1; }
+.countdown-section .section-title { color: #ffffff; }
+.countdown-section .section-sub { color: rgba(255,255,255,0.6); }
 
 .countdown {
   display: flex;
@@ -352,7 +404,7 @@ section, .full-section {
   font-family: var(--font-serif);
   font-size: clamp(1.6rem, 4vw, 2.8rem);
   font-weight: 300;
-  color: var(--brown-deep);
+  color: #ffffff;
   line-height: 1;
   transition: transform 0.3s;
 }
@@ -360,7 +412,7 @@ section, .full-section {
 .countdown-unit {
   font-family: var(--font-sans);
   font-size: 0.75rem;
-  color: var(--brown-deep);
+  color: rgba(255,255,255,0.6);
   letter-spacing: 4px;
   text-transform: uppercase;
   margin-top: 0.5rem;
@@ -445,13 +497,13 @@ section, .full-section {
   font-family: var(--font-serif);
   font-size: 1.5rem;
   font-weight: 500;
-  color: var(--brown-deep);
+  color: #ffffff;
   margin-bottom: 0.4rem;
 }
 
 .timeline-desc {
   font-size: 1rem;
-  color: var(--muted);
+  color: rgba(255,255,255,0.6);
   font-weight: 300;
   line-height: 1.9;
 }
@@ -563,9 +615,9 @@ section, .full-section {
 
 /* ========== Wedding Info ========== */
 .info-section { text-align: center; }
-.info-section .section-label { color: var(--terracotta); }
-.info-section .section-title { color: var(--brown-deep); }
-.info-section .section-sub { color: var(--muted); }
+.info-section .section-label { color: var(--sand); }
+.info-section .section-title { color: #ffffff; }
+.info-section .section-sub { color: rgba(255,255,255,0.6); }
 
 .info-grid {
   display: grid;
@@ -576,8 +628,8 @@ section, .full-section {
 
 .info-card {
   padding: 2.5rem 2rem;
-  background: #ffffff;
-  border: 1px solid var(--light-gray);
+  background: #5b4c3a;
+  border: 1px solid rgba(255,255,255,0.12);
   border-radius: 2px;
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -597,13 +649,13 @@ section, .full-section {
   font-family: var(--font-serif);
   font-size: 1.6rem;
   font-weight: 400;
-  color: var(--brown-deep);
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
 .info-card p {
   font-size: 1.15rem;
-  color: var(--muted);
+  color: rgba(255,255,255,0.65);
   font-weight: 300;
   line-height: 1.9;
 }
@@ -621,8 +673,8 @@ section, .full-section {
 }
 
 .mini-cal-header {
-  background: #ffffff;
-  color: var(--brown-deep);
+  background: rgba(0,0,0,0.15);
+  color: #ffffff;
   text-align: center;
   padding: 0.8rem;
 }
@@ -637,7 +689,7 @@ section, .full-section {
 .mini-cal-header span {
   font-family: var(--font-sans);
   font-size: 0.75rem;
-  color: var(--brown-deep);
+  color: rgba(255,255,255,0.6);
   letter-spacing: 4px;
   text-transform: uppercase;
 }
@@ -648,13 +700,13 @@ section, .full-section {
   text-align: center;
   padding: 0.6rem 1rem 1rem;
   gap: 0;
-  background: #ffffff;
+  background: transparent;
 }
 
 .mini-cal-grid .day-label {
   font-family: var(--font-sans);
   font-size: 0.75rem;
-  color: var(--brown-deep);
+  color: rgba(255,255,255,0.5);
   letter-spacing: 1px;
   padding: 0.4rem 0;
   text-transform: uppercase;
@@ -664,7 +716,7 @@ section, .full-section {
   font-family: var(--font-sans);
   font-size: 1rem;
   font-weight: 300;
-  color: var(--brown-deep);
+  color: rgba(255,255,255,0.8);
   padding: 0.45rem 0;
   position: relative;
 }
@@ -674,11 +726,11 @@ section, .full-section {
 }
 
 .mini-cal-grid .day.muted {
-  color: var(--light-gray);
+  color: rgba(255,255,255,0.2);
 }
 
 .mini-cal-grid .day.highlight {
-  color: var(--brown-deep);
+  color: #ffffff;
   font-weight: 700;
   font-size: 1.3rem;
   z-index: 1;
@@ -693,7 +745,7 @@ section, .full-section {
   width: 40px;
   height: 40px;
   background: transparent;
-  border: 2px solid var(--brown-deep);
+  border: 2px solid var(--sand);
   border-radius: 50%;
   z-index: 2;
 }
@@ -722,21 +774,21 @@ section, .full-section {
   align-items: center;
   gap: 0.5rem;
   padding: 0.6rem 1.4rem;
-  border: 1px solid var(--brown-deep);
+  border: 1px solid rgba(255,255,255,0.4);
   border-radius: 2px;
   font-family: var(--font-sans);
   font-size: 0.8rem;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: var(--brown-deep);
+  color: #ffffff;
   text-decoration: none;
   transition: background 0.3s, color 0.3s;
 }
-.map-btn:hover { background: var(--brown-deep); color: #ffffff; }
+.map-btn:hover { background: rgba(255,255,255,0.15); color: #ffffff; }
 
 /* ========== RSVP ========== */
 .rsvp-section {
-  background: #ffffff;
+  background: #b7a996;
   text-align: center;
 }
 
@@ -755,7 +807,7 @@ section, .full-section {
   font-family: var(--font-sans);
   font-size: 1rem;
   font-weight: 700;
-  color: var(--brown-deep);
+  color: #ffffff;
   letter-spacing: 3px;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
@@ -771,9 +823,9 @@ section, .full-section {
   font-family: var(--font-sans);
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--brown-deep);
-  background: #ffffff;
-  border: 1px solid var(--light-gray);
+  color: #ffffff;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
   border-radius: 2px;
   outline: none;
   transition: border-color 0.3s, box-shadow 0.3s;
@@ -781,7 +833,7 @@ section, .full-section {
 }
 
 .rsvp-field input::placeholder,
-.rsvp-field textarea::placeholder { color: var(--muted); }
+.rsvp-field textarea::placeholder { color: rgba(255,255,255,0.4); }
 
 .rsvp-field input:focus,
 .rsvp-field select:focus,
@@ -833,9 +885,9 @@ section, .full-section {
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: var(--brown-deep);
-  background: #ffffff;
-  border: 1px solid var(--light-gray);
+  color: #ffffff;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
   border-radius: 2px;
   cursor: pointer;
   transition: all 0.3s;
@@ -1098,7 +1150,7 @@ section, .full-section {
 @media (max-width: 768px) {
   .hero-bg img { object-position: center 35%; }
   .hero-frame { inset: 0.8rem; }
-  .hero-content { top: 16rem; }
+  .hero-content { bottom: 4rem; top: auto; }
   .hero-names-row h1 { font-size: clamp(1.6rem, 7vw, 2.5rem); }
   .hero-names-row .hero-amp { font-size: 1rem; }
   .nav { gap: 1.2rem; padding: 1rem 0.8rem; }
@@ -1150,6 +1202,14 @@ section, .full-section {
 </head>
 <body>
 
+<!-- Background Blobs -->
+<div class="bg-blobs">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+  <div class="blob blob-4"></div>
+</div>
+
 <!-- Enter Overlay -->
 <div class="enter-overlay" id="enterOverlay">
   <p class="enter-overlay-names">Peter &amp; Mary</p>
@@ -1173,7 +1233,7 @@ section, .full-section {
 <!-- Hero Section -->
 <section class="hero" id="hero">
   <div class="hero-bg">
-    <img src="123.jpeg" alt="Peter and Mary">
+    <img src="example2.jpeg" alt="Peter and Mary">
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-frame"></div>
